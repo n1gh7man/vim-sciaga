@@ -1,21 +1,19 @@
-# Vim Cheatsheet
-
->Disclaimer: This cheatsheet is summarized from personal experience and other online tutorials. It should not be considered as an official advice.
+# Ściąga poleceń vima
 
 ## Global
 ```bash
 :help keyword # open help for keyword
-:o file       # open file
-:saveas file  # save file as
+:o plik       # otwórz plik
+:saveas plik  # zapisz jako plik
 :close        # close current pane
 ```
 
 ## Cursor movement
 ```bash
-h        # move cursor left
-j        # move cursor down
-k        # move cursor up
-l        # move cursor right
+h        # przenieś kursor w lewo
+j        # przenieś kursor w dół
+k        # przenieś kursor w górę
+l        # przenieś kursor w prawo
 H        # move to top of screen
 M        # move to middle of screen
 L        # move to bottom of screen
@@ -25,13 +23,13 @@ e        # jump forwards to the end of a word
 E        # jump forwards to the end of a word (words can contain punctuation)
 b        # jump backwards to the start of a word
 B        # jump backwards to the start of a word (words can contain punctuation)
-0        # jump to the start of the line
+0        # przejdź do początku linii
 ^        # jump to the first non-blank character of the line
-$        # jump to the end of the line
+$        # przejdź do końca linii
 g_       # jump to the last non-blank character of the line
-gg       # go to the first line of the document
-G        # go to the last line of the document
-5G       # go to line 5
+gg       # idź do pierwszej linii dokumentu
+G        # idź do ostaniej linii dokumentu
+5G       # idź do linii piątej
 fx       # jump to next occurrence of character x
 tx       # jump to before next occurrence of character x
 }        # jump to next paragraph (or function/block, when editing code)
@@ -57,8 +55,8 @@ Esc      # exit insert mode
 
 ## Editing
 ```bash
-r        # replace a single character
-J        # join line below to the current one
+r        # zamień pojedyńczy znak
+J        # dołącz linię poniżej do obecnej
 cc       # change (replace) entire line
 cw       # change (replace) to the start of the next word
 ce       # change (replace) to the end of the next word
@@ -68,9 +66,9 @@ c$       # change (replace) to the end of the line
 s        # delete character and substitute text
 S        # delete line and substitute text (same as cc)
 xp       # transpose two letters (delete and paste)
-.        # repeat last command
-u        # undo
-Ctrl + r # redo
+.        # powtórz ostatnie polecenie
+u        # cofnij ostatnią operację
+Ctrl + r # cofnij undo
 ```
 
 ## Marking text (visual mode)
@@ -93,32 +91,32 @@ Ctrl + v # start visual block mode
 >       # shift text right
 <       # shift text left
 y       # yank (copy) marked text
-d       # delete marked text
+d       # usuń zaznaczony tekst
 ~       # switch case
 ```
 
 ## Cut and paste
 ```bash
-yy       # yank (copy) a line
-2yy      # yank (copy) 2 lines
-yw       # yank (copy) the characters of the word from the cursor position to the start of the next word
-y$       # yank (copy) to end of line
+yy       # yankuj (kopiuj) linię
+2yy      # yankuj (kopiuj) dwie linie
+yw       # yankuj (kopiuj) the characters of the word from the cursor position to the start of the next word
+y$       # yankuj (kopiuj) do końca linii
 p        # put (paste) the clipboard after cursor
 P        # put (paste) before cursor
-dd       # delete (cut) a line
-2dd      # delete (cut) 2 lines
-dw       # delete (cut) the characters of the word from the cursor position to the start of the next word
-D        # delete (cut) to the end of the line
-d$       # delete (cut) to the end of the line
-d^       # delete (cut) to the first non-blank character of the line
-d0       # delete (cut) to the begining of the line
-x        # delete (cut) character
+dd       # usuń (wytnij) linię
+2dd      # usuń (wytnij) 2 linie
+dw       # usuń (wytnij) the characters of the word from the cursor position to the start of the next word
+D        # usuń (wytnij) do końca linii
+d$       # usuń (wytnij) do końca linii
+d^       # usuń (wytnij) do pierwszego niepustego znaku w linii
+d0       # usuń (wytnij) do początku linii
+x        # usuń (wytnij) znak
 ```
 
 ## Search and replace
 ```bash
-/pattern       # search for pattern
-?pattern       # search backward for pattern
+/wzór       # szukaj (do przodu) słowa wzór
+?wzór       # szukaj (do tyłu) słowa wzór
 \vpattern      # 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
 n              # repeat search in same direction
 N              # repeat search in opposite direction
