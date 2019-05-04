@@ -8,15 +8,15 @@
 :close        # close current pane
 ```
 
-## Cursor movement
+## Poruszanie kursorem
 ```bash
 h        # przenieś kursor w lewo
 j        # przenieś kursor w dół
 k        # przenieś kursor w górę
 l        # przenieś kursor w prawo
-H        # move to top of screen
-M        # move to middle of screen
-L        # move to bottom of screen
+H        # przenieś kursor do góry ekranu
+M        # przenieś kursor na środek ekranu
+L        # przenieś kursor do dołu ekranu
 w        # jump forwards to the start of a word
 W        # jump forwards to the start of a word (words can contain punctuation)
 e        # jump forwards to the end of a word
@@ -30,7 +30,7 @@ g_       # jump to the last non-blank character of the line
 gg       # idź do pierwszej linii dokumentu
 G        # idź do ostaniej linii dokumentu
 5G       # idź do linii piątej
-fx       # jump to next occurrence of character x
+fx       # przejdź do następnego wystąpienia znaku x
 tx       # jump to before next occurrence of character x
 }        # jump to next paragraph (or function/block, when editing code)
 {        # jump to previous paragraph (or function/block, when editing code)
@@ -41,7 +41,7 @@ Ctrl + d # move forward 1/2 a screen
 Ctrl + u # move back 1/2 a screen
 ```
 
-## Insert mode - inserting/appending text
+## Wstawianie tekstu
 ```bash
 i        # insert before the cursor
 I        # insert at the beginning of the line
@@ -50,10 +50,10 @@ A        # insert (append) at the end of the line
 o        # append (open) a new line below the current line
 O        # append (open) a new line above the current line
 ea       # insert (append) at the end of the word
-Esc      # exit insert mode
+Esc      # wyjdź z trybu wstawiania tekstu
 ```
 
-## Editing
+## Edytowanie
 ```bash
 r        # zamień pojedyńczy znak
 J        # dołącz linię poniżej do obecnej
@@ -71,13 +71,13 @@ u        # cofnij ostatnią operację
 Ctrl + r # cofnij undo
 ```
 
-## Marking text (visual mode)
+## Zaznaczanie tekstu (tryb wizualny)
 ```bash
 v        # start visual mode, mark lines, then do a command (like y-yank)
 V        # start linewise visual mode
 o        # move to other end of marked area
 O        # move to other corner of block
-aw       # mark a word
+aw       # zaznacz słowo
 ab       # a block with ()
 aB       # a block with {}
 ib       # inner block with ()
@@ -86,7 +86,7 @@ Esc      # exit visual mode
 Ctrl + v # start visual block mode
 ```
 
-## Visual commands
+## Komendy trybu wizualnego
 ```bash
 >       # shift text right
 <       # shift text left
@@ -95,7 +95,7 @@ d       # usuń zaznaczony tekst
 ~       # switch case
 ```
 
-## Cut and paste
+## Usuwanie, kopiowanie i wklejanie tekstu
 ```bash
 yy       # yankuj (kopiuj) linię
 2yy      # yankuj (kopiuj) dwie linie
@@ -113,7 +113,7 @@ d0       # usuń (wytnij) do początku linii
 x        # usuń (wytnij) znak
 ```
 
-## Search and replace
+## Znajdowanie i zamienianie tekstu
 ```bash
 /wzór       # szukaj (do przodu) słowa wzór
 ?wzór       # szukaj (do tyłu) słowa wzór
@@ -125,7 +125,7 @@ N              # repeat search in opposite direction
 :noh           # remove highlighting of search matches
 ```
 
-## Search in multiple files
+## Wyszukiwanie w wielu plikach
 ```bash
 :vimgrep /pattern/ {file} # search for pattern in multiple files
 :cn                       # jump to the next match
@@ -133,7 +133,7 @@ N              # repeat search in opposite direction
 :copen                    # open a window containing the list of matches
 ```
 
-## Exiting
+## Wychodzenie z programu
 ```bash
 :w              # write (save) the file, but don't exit
 :w !sudo tee %  # write out the current file using sudo
@@ -142,7 +142,7 @@ N              # repeat search in opposite direction
 :q! or ZQ       # quit and throw away unsaved changes
 ```
 
-## Working with multiple files
+## Praca z wieloma plikami
 ```bash
 :e file       # edit a file in a new buffer
 :bnext or :bn # go to the next buffer
@@ -161,7 +161,7 @@ Ctrl + wj     # move cursor to the window below (horizontal split)
 Ctrl + wk     # move cursor to the window above (horizontal split)
 ```
 
-## Tabs
+## Zakładki
 ```bash
 :tabnew or :tabnew file # open a file in a new tab
 Ctrl + wT               # move the current split window into its own tab
