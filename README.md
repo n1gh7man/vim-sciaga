@@ -2,7 +2,7 @@
 
 ## Global
 ```bash
-:help keyword # open help for keyword
+:help słowo # otwórz pomoc dla "słowo"
 :o plik       # otwórz plik
 :saveas plik  # zapisz jako plik
 :close        # close current pane
@@ -24,9 +24,9 @@ E        # jump forwards to the end of a word (words can contain punctuation)
 b        # jump backwards to the start of a word
 B        # jump backwards to the start of a word (words can contain punctuation)
 0        # przejdź do początku linii
-^        # jump to the first non-blank character of the line
+^        # przejdź do pierwszego niepustego znaku w linii
 $        # przejdź do końca linii
-g_       # jump to the last non-blank character of the line
+g_       # przejdź do ostatniego niepustego znaku w linii
 gg       # idź do pierwszej linii dokumentu
 G        # idź do ostaniej linii dokumentu
 5G       # idź do linii piątej
@@ -35,21 +35,21 @@ tx       # jump to before next occurrence of character x
 }        # jump to next paragraph (or function/block, when editing code)
 {        # jump to previous paragraph (or function/block, when editing code)
 zz       # center cursor on screen
-Ctrl + b # move back one full screen
-Ctrl + f # move forward one full screen
-Ctrl + d # move forward 1/2 a screen
-Ctrl + u # move back 1/2 a screen
+Ctrl + b # przesuń kursor do tyłu o jeden pełny ekran
+Ctrl + f # przesuń kursor do przodu o jeden pełny ekran
+Ctrl + d # przesuń kursor do przodu o połowę ekranu
+Ctrl + u # przesuń kursor do tyłu o połowę ekranu
 ```
 
 ## Wstawianie tekstu
 ```bash
-i        # insert before the cursor
-I        # insert at the beginning of the line
-a        # insert (append) after the cursor
-A        # insert (append) at the end of the line
-o        # append (open) a new line below the current line
-O        # append (open) a new line above the current line
-ea       # insert (append) at the end of the word
+i        # wstaw tekst przed kursorem
+I        # wstaw tekst na początku linii
+a        # wstaw (appenduj) tekst za kursorem
+A        # wstaw (appenduj) tekst na końcu linii
+o        # appenduj (otwórz) nową linię poniżej obecnej
+O        # appenduj (otwórz) nową linię powyżej obecnej
+ea       # wstaw (appenduj) tekst na końcu słowa
 Esc      # wyjdź z trybu wstawiania tekstu
 ```
 
@@ -82,15 +82,15 @@ ab       # a block with ()
 aB       # a block with {}
 ib       # inner block with ()
 iB       # inner block with {}
-Esc      # exit visual mode
+Esc      # wyjdź z trybu wizualnego
 Ctrl + v # start visual block mode
 ```
 
 ## Komendy trybu wizualnego
 ```bash
->       # shift text right
-<       # shift text left
-y       # yank (copy) marked text
+>       # przesuń tekst w prawo
+<       # przesuń tekst w lewo
+y       # yankuj (kopiuj) zaznaczony tekst
 d       # usuń zaznaczony tekst
 ~       # switch case
 ```
@@ -99,13 +99,13 @@ d       # usuń zaznaczony tekst
 ```bash
 yy       # yankuj (kopiuj) linię
 2yy      # yankuj (kopiuj) dwie linie
-yw       # yankuj (kopiuj) the characters of the word from the cursor position to the start of the next word
+yw       # yankuj (kopiuj) znaki od obecnej pozycji kursora do początku następnego słowa (znaki z nastepnego słowa nie są        kopiowane)
 y$       # yankuj (kopiuj) do końca linii
-p        # put (paste) the clipboard after cursor
-P        # put (paste) before cursor
+p        # wklej tekst za kursorem
+P        # wklej tekst przed kursorem
 dd       # usuń (wytnij) linię
 2dd      # usuń (wytnij) 2 linie
-dw       # usuń (wytnij) the characters of the word from the cursor position to the start of the next word
+dw       # usuń (wytnij) znaki od obecnej pozycji kursora do początku następnego słowa (znaki z nastepnego słowa nie są        usuwane)
 D        # usuń (wytnij) do końca linii
 d$       # usuń (wytnij) do końca linii
 d^       # usuń (wytnij) do pierwszego niepustego znaku w linii
@@ -122,31 +122,31 @@ n              # repeat search in same direction
 N              # repeat search in opposite direction
 :%s/old/new/g  # replace all old with new throughout file
 :%s/old/new/gc # replace all old with new throughout file with confirmations
-:noh           # remove highlighting of search matches
+:noh           # wyłącz podświetlenie dopasowań z wyszukiwania 
 ```
 
 ## Wyszukiwanie w wielu plikach
 ```bash
-:vimgrep /pattern/ {file} # search for pattern in multiple files
-:cn                       # jump to the next match
-:cp                       # jump to the previous match
-:copen                    # open a window containing the list of matches
+:vimgrep /xyz/ {file} #  szukaj "xyz" w wielu plikach
+:cn                       # przejdź do następnego dopasowania
+:cp                       # przejdź do poprzedniego dopasowania
+:copen                    # otwórz okno zawierające listę dopasowań
 ```
 
-## Wychodzenie z programu
+## Wychodzenie z vima i zapisywanie pliku
 ```bash
-:w              # write (save) the file, but don't exit
+:w              # zapisz plik ale nie wychódź z vima
 :w !sudo tee %  # write out the current file using sudo
-:wq or :x or ZZ # write (save) and quit
-:q              # quit (fails if there are unsaved changes)
-:q! or ZQ       # quit and throw away unsaved changes
+:wq or :x or ZZ # zapisz i wyjdź z vima
+:q              # wyjdź (nie działa jeśli są niezapisane zmiany)
+:q! or ZQ       # wyjdź i odrzuć niezapisane zmiany
 ```
 
 ## Praca z wieloma plikami
 ```bash
-:e file       # edit a file in a new buffer
-:bnext or :bn # go to the next buffer
-:bprev or :bp # go to the previous buffer
+:e file       # edytuj plik w nowym buforze
+:bnext lub :bn # idź do następnego buforu
+:bprev lub :bp # idź do poprzedniego buforu
 :bd           # delete a buffer (close a file)
 :ls           # list all open buffers
 :sp file      # open a file in a new buffer and split window
